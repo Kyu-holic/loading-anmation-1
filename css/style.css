@@ -1,0 +1,54 @@
+body {
+    /*
+    display 부터 height 는 화면 중앙정렬하는 방법
+    */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.loading {
+}
+.loading span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: gray;
+    border-radius: 50%;
+    /*
+    animation속성 이름 loading
+    몇 초 동안 할 것인지 1s
+    animation-delay는 0s가 기본값 안 넣으면 0s
+    linear는 key-frame과 key-frame 구간 부드럽게
+    infinite는 무한반복
+    */
+    animation: loading 1s linear infinite;
+}
+.loading span:nth-child(1) {
+    animation-delay: 0s;
+    background-color: crimson;
+}
+.loading span:nth-child(2) {
+    animation-delay: 0.2s;
+    background-color: dodgerblue;
+}
+.loading span:nth-child(3) {
+    animation-delay: 0.4s;
+    background-color: yellow;
+}
+
+@keyframes loading {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
